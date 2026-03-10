@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Hannah Lopez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/jesterfavicon.png">
+    <title>MOVIE RATING</title>
+    <style>
+        *{
+            box-sizing:border-box;
+            padding:0;
+            margin:0;
+            font-family:'Courier New', Courier, monospace;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+        }
+        #container{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background-color:grey;
+            width:100%;
+            height:100%;
+        }
+        #openRating{
+            width:10%;
+            height:10%;
+            cursor:pointer;
+            background-color:transparent;
+            border:none;
+        }
+        #openRating p{
+            font-size:4rem;
+            text-align:center;
+            margin:0;
+            padding:0;
+        }
+        #movies{
+            background-color:white;
+            opacity:0;
+            position:absolute;
+            width:30%;
+            height:80%;
+            pointer-events:none;
+            border: 10px dashed black;
+            border-radius:10px;
+            padding:2%;
+        }
+        #movies.show{
+            opacity:1;
+            pointer-events:auto;
+        }
+        input{
+            width:100%;
+            font-size:1.5rem;
+        }
+        select{
+            width:100%;
+            font-size:1.5rem;
+        }
+        .star{
+            font-size:2rem;
+            background-color:transparent;
+            border:none;
+            cursor:pointer;
+            color:rgba(128, 128, 128, 0.512);
+        }
+        .select{
+            color:black;
+        }
+        #submit{
+            width:100%;
+            font-size:1.5rem;
+            border:none;
+            background-color:grey;
+            cursor:pointer;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body onload="load()">
+    <div id="container">
+    <button id="openRating"><p>🎬</p></button>
+    <div id="movies">
+        <form id="movieForm">
+            <h1 style="text-align:center">🎥Movies🎥</h1>
+            <br>
+            <label for="title">Title:</label>
+            <br>
+            <input type="text" id="title">
+            <br>
+            <label for="year">Year:</label>
+            <br>
+            <input type="text" id="year">
+            <label for="genre">Genre</label>
+            <br>
+            <select name="genre" id="genre">
+                <option value="Horror">Horror</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Romance">Romance</option>
+                <option value="Mystery">Mystery</option>
+            </select>
+        </form>
+        <br>
+        <h3>Rating:</h3>
+            <button id="1" class="star"><p>★</p></button>
+            <button id="2" class="star"><p>★</p></button>
+            <button id="3" class="star"><p>★</p></button>
+            <button id="4" class="star"><p>★</p></button>
+            <button id="5" class="star"><p>★</p></button>
+        <br>
+        <br>
+            <button id="submit">Add Movie</button>
+            <br>
+            <br>
+            <h2>Movie List:</h2>
+            <ul id="movieList"></ul>
+    </div>
+    </div>
+
+<script src="4Q1Gscript.js"></script>
+</body>
+</html>
