@@ -81,6 +81,12 @@
             cursor:pointer;
             border-radius:10px;
         }
+        #list{
+            overflow:scroll;
+        }
+        li{
+            text-transform:capitalize;
+        }
     </style>
 </head>
 <body onload="load()">
@@ -96,7 +102,7 @@
             <br>
             <label for="year">Year:</label>
             <br>
-            <input type="text" id="year">
+            <input type="number" id="year">
             <label for="genre">Genre</label>
             <br>
             <select name="genre" id="genre">
@@ -117,10 +123,11 @@
         <br>
         <br>
             <button id="submit">Add Movie</button>
-            <br>
+            <div id="list">
             <br>
             <h2>Movie List:</h2>
             <ul id="movieList"></ul>
+            </div>
     </div>
     </div>
 

@@ -12,7 +12,7 @@ function load(){
         movies.classList.add('show');
     }
 
-   
+
 //star function
 
 let star=document.querySelectorAll('.star');
@@ -36,32 +36,60 @@ stars.forEach((i, n)=>{
 });
 const movieList= JSON.parse(localStorage.getItem('movieCatalog'))|| [];
 let submit=document.getElementById('submit');
+let uniqueTitle=JSON.parse(localStorage.getItem('unique')) || [];
 
-submit.addEventListener('click',save)
+submit.addEventListener('click',save);
+
 function save(){
 let t=document.getElementById("title").value;
 let y=document.getElementById('year').value;
 let g=document.getElementById('genre').value;
+if(t=='' || y=='' || g==''){
+    alert('Please fill all fields');
+    return;
+}
+
+if(uniqueTitle.includes(t)){
+    for(idx in movieList){
+        if(movieList[idx]['title']==t){
+            movieList[idx]['totalRating']=movieList[idx]['totalRating']+rated();
+            movieList[idx]['numOfRating']=movieList[idx]['numOfRating']+1;
+
+            movieList[idx]['rating']=movieList[idx]['totalRating'] / movieList[idx]['numOfRating']
+
+            localStorage.setItem('movieCatalog', JSON.stringify(movieList));
+            console.log(movieList[idx]['rating']);
+        }
+}
+}else{
+    uniqueTitle.push(t);
 movieList.push(
     {
         title: t,
         year: y,
         genre:g,
-        rating: rated()
+        rating: rated(),
+        totalRating: rated(),
+        numOfRating:1
 
     }
 )
 localStorage.setItem('movieCatalog', JSON.stringify(movieList));
+localStorage.setItem('unique', JSON.stringify(uniqueTitle));
+}
 render();
 }
-
 function render(){
 
     let starText="★"
 document.getElementById('movieList').innerHTML=movieList.map(i=>
     
     `
-    <li>${i.title} (${i.year}) - ${i.genre}, Rating: ${starText.repeat(i.rating)} </li>
+    <li>${i.title} (${i.year}) - ${i.genre}, Rating: ${i.rating} ${starText.repeat(Math.floor(i.rating))} </li>
     `
-).join('');
+).join(' ')
 }
+
+let t=document.getElementById("title").value;
+let y=document.getElementById('year').value;
+let g=document.getElementById('genre').value;
