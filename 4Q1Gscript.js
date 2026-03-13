@@ -85,7 +85,7 @@ function render(){
 document.getElementById('movieList').innerHTML=movieList.map(i=>
     
     `
-    <li>${i.title} (${i.year}) - ${i.genre}, Rating: ${i.rating} ${starText.repeat(Math.floor(i.rating))} </li>
+    <li>${i.title} (${i.year}) - ${i.genre}, Rating: ${Math.round(i.rating*100)/100} ${starText.repeat(Math.floor(i.rating))} </li>
     `
 ).join(' ')
 }
