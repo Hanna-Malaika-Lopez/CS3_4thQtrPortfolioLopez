@@ -117,3 +117,8 @@ to top: 1px;, it puts the content near the top of the website. The difference be
     -Sticky will be like a fixed element, but when the scroll exceeds where the sticky element was positioned (y-axis wise, not viewport-wise), it will stick to the top/bottom of the page.
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+
+    -I would use absolute positioning for elements in divs (ex. if there is a div containing registration information, i'll position the elements in the div using absolute positioning)
+    -I would you fixed for footers (for copyright);
+    -I would use sticky positioning for announcements/ads (ex. a small div in with ads/announcements)
+    -I would use static for main header (for website/program title)
