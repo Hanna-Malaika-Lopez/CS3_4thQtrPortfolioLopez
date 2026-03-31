@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Sir Roy/Al Mendoza">
+  <meta name="description" content="testing and debugging">
+  <meta name="keywords" content="testing and debugging">
+  <title>CS3 </title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <style>
+    tr:nth-child(1) ~ tr:nth-child(odd) {
+      background-color: lightgray;
+      color: black;
+    }
+    td, th {
+      padding: 10px;
+    }
+    table {
+      width: 90%;
+      margin: 0 auto;
+    }
+    caption {
+      font-size: 2em;
+      font-weight: bold;
+      padding: 10px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="4Q3rdGPotassiumLopez.html#start">Table</a>
+      <a href="4Q3rdGPotassiumLopez.html#input">Input</a>
+      <a href="4Q3rdGPotassiumLopez.html#output">Output</a>
+      <a href="errorlogs.html" id="error">Error Logs</a>
+    </nav>
+    
+    <h1 style="padding: 30px">Hannah Malaika Lopez / Potassium Mar 31 2026 </h1>
+  </header>
+
+  <section id="table">
+    <table> 
+      <caption> Error Logs - place errors found in the table below</caption>
+      <tr class="rColor">
+        <th> item# </th> 
+        <th> code line#<br/>CSS or JS </th> 
+        <th> Description</th>
+        <th> Correction Done</th>
+      </tr>
+      <tr>
+        <td> 1 </td> 
+        <td> 26 (script.js)</td> 
+        <td> Function did not have a closing bracket</td>
+        <td>Added closed bracket in line 26</td>
+      </tr>
+      <tr>
+        <td> 2 </td> 
+        <td>42 (style.css)</td> 
+        <td>"nav a :hover" does not result in a background change.</td>
+        <td>removed space between a and :hover (nav a:hover).</td>
+      </tr>
+      <tr>
+        <td> 3 </td> 
+        <td>91 (style.css)</td> 
+        <td>Could not get sprite.png to become background image since the url is incorrect.</td>
+        <td>Changed url('sprite.png') to url('images/sprite.png').</td>
+      </tr>
+      <tr>
+        <td> 4 </td> 
+        <td>1 (script.js)</td> 
+        <td>When looking at console, it seems that the variables that have been passed are html tags instead of the input value.</td>
+        <td>Added x0,y0,x,y into the function parameters.</td>
+      </tr>
+      <tr>
+        <td> 5 </td> 
+        <td>11 (script.js)</td> 
+        <td>Repositioning the left of the point does not work since syntax is incorrect (point.styleleft)</td>
+        <td>Replaced "point.styleleft" with "point.style.left"</td>
+      </tr>
+      <tr>
+        <td> 6 </td> 
+        <td>12 (script.js)</td> 
+        <td>Repositioning the bottom of the point does not work since syntax is incorrect (point.stylebottom)</td>
+        <td>Replaced "point.stylebottom" with "point.style.bottom"</td>
+      </tr>
+      <tr>
+        <td> 7 </td> 
+        <td>25 (style.css)</td> 
+        <td>Navigation links were not in one line.</td>
+        <td>Changes the display of nav into flex, changed width of all nav a into 25% so they will share 25% of the line (nav).</td>
+      </tr>
+      <tr>
+        <td> 8 </td> 
+        <td>25 (style.css)</td> 
+        <td>Navigation scrolled with page.</td>
+        <td>Changed Position to fixed.</td>
+      </tr>
+      <tr>
+        <td> 9 </td> 
+        <td>58 (style.css)</td> 
+        <td>Point would not move into calculated position in script.js.</td>
+        <td>Changed position to absolute</td>
+      </tr>
+      <tr>
+        <td> 10 </td> 
+        <td>7-9 (style.css)</td> 
+        <td>Multiple font-family keywords, redundant and irrelevant for the system, which is why there was a strikethrough in the console.</td>
+        <td>Combined all the fonts in this order: 'Open Sans', 'Poppins', 'Roboto', sans-serif;. This will let the system recognize all the fonts as back-up.</td>
+      </tr>
+     
+    </table>
+    <hr>
+    <br>
+    <br>
+    <br>
+  </section>
+  
+   
+  <!--- anchors for socmed site are done with image sprites -->
+  <footer>
+    <a href="https://facebook.com"> 
+    <div class="icon facebook"></div>
+    </a>
+    <a href="https://twitter.com">
+    <div class="icon twitter"></div>
+    </a>
+    <a href="https://github.com">
+    <div class="icon github"></div>
+    </a>
+  </footer>
+ 
+</body>
+
+</html>
